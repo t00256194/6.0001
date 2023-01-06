@@ -4,13 +4,13 @@ print('Welcome to the game Hangman!')
 print('I\'m thinking of a word that is %d letters long.' %len(word))
 print('You have 3 warnings.')
 print('-'*10)
+
 dict = list('abcdefghijklmnopqrstuvwxyz')
 vowel = list('aeiou')
 hangman = ['_ ']*len(word)
 used = []
 num_guess = 6
 warnings = 3
-i = 0
 
 
 def conditions(x):
@@ -23,7 +23,7 @@ def conditions(x):
     if warnings in range (0,3) and num_guess > 0:
         print('You have', warnings, 'warnings left:', ''.join(hangman))
         
-
+i = 0
 while i <= num_guess:
 
     print('You have', num_guess, 'guesses left.')
