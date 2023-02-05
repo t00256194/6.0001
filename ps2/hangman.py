@@ -108,16 +108,16 @@ def hangman(secret_word):
 
         if guess.isalpha() == True:
             
-            """New Guess"""
+            ###New Guess 
             if guess not in letters_guessed:
                 letters_guessed.append(guess)
 
-                """Correct Guess"""
+                ###Correct Guess 
                 if guess in secret_word:
                     print('Good guess: ', end=' ')
                     print(''.join(get_guessed_word(secret_word, letters_guessed)))
 
-                """Incorrect Guess"""
+                ###Incorrect Guess
                 else:
                     if guess in vowel:
                         guesses_remaining -= 2
@@ -126,7 +126,7 @@ def hangman(secret_word):
                     print('Oops! That letter is not in the word: ', end=' ')
                     print(''.join(get_guessed_word(secret_word, letters_guessed)))
 
-            """Already Guessed"""
+            ###Already Guessed
             else:
                 warnings_remaining -= 1
                 print('Oops! You\'ve already guessed that letter.', end=' ')
