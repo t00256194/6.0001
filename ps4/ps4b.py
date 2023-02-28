@@ -246,6 +246,7 @@ class CiphertextMessage(Message):
         return (best_shift, best_decryption)
     
 ##        # Method 2
+##    def decrypt_message(self):
 ##        valid_word_count = []
 ##        for shift in range(26):
 ##            decrypted_text = self.apply_shift(shift).split()   
