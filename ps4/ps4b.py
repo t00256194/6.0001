@@ -245,7 +245,7 @@ class CiphertextMessage(Message):
         # Return the best shift and best decryption
         return (best_shift, best_decryption)
     
-##        # Method 2
+##    # Method 2
 ##    def decrypt_message(self):
 ##        valid_word_count = []
 ##        for shift in range(26):
