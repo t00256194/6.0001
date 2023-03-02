@@ -249,7 +249,7 @@ class CiphertextMessage(Message):
 ##        decrypted_message = ''
 ##        for shift in range(26):
 ##            shifted_message = self.apply_shift(shift)
-##            valid_word_count = sum([is_word(self.get_valid_words(), word) for word in shifted_message.split()])     # Option 1
+##            valid_word_count = sum(is_word(self.get_valid_words(), word) for word in shifted_message.split())     # Option 1
 ##            # valid_word_count = sum(1 for word in shifted_message.split() if is_word(self.get_valid_words(), word))  # Option 2
 ##
 ##            # Update max_valid_words and best_shift if valid_word_count for current shift is greater
@@ -258,7 +258,7 @@ class CiphertextMessage(Message):
 ##                best_shift = shift
 ##                decrypted_message = shifted_message
 ##        return (best_shift, decrypted_message)
-##  
+
 
 
 if __name__ == '__main__':
