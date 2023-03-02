@@ -95,7 +95,7 @@ def hangman(secret_word):
         get_available_letters(letters_guessed)
         guess = str.lower(input('Please guess a letter: '))
 
-        if guess.isalpha() == False:
+        if not guess.isalpha():
             warnings_remaining -= 1
             print('Oops! That is not a valid letter.', end=' ')
             if warnings_remaining < 0 and guesses_remaining > 0:
@@ -106,7 +106,7 @@ def hangman(secret_word):
             print(''.join(get_guessed_word(secret_word, letters_guessed)))
 
 
-        if guess.isalpha() == True:
+        if guess.isalpha():
             
             ###New Guess 
             if guess not in letters_guessed:
@@ -137,7 +137,7 @@ def hangman(secret_word):
                     print('You have', warnings_remaining, 'warnings left:', end=' ')
                 print(''.join(get_guessed_word(secret_word, letters_guessed)))
 
-        if is_word_guessed(secret_word, letters_guessed) == True:
+        if is_word_guessed(secret_word, letters_guessed):
             print('-'*10)
             print('Congratulations! You win!') 
             print('Your total score for this game is:', guesses_remaining*len(set(secret_word)))
@@ -241,7 +241,7 @@ def hangman_with_hints(secret_word):
         get_available_letters(letters_guessed)
         guess = str.lower(input('Please guess a letter: '))
 
-        if guess.isalpha() == False:
+        if not guess.isalpha():
             if guess == '*':
                 hint = ''.join(get_guessed_word(secret_word, letters_guessed))
                 print 
@@ -257,7 +257,7 @@ def hangman_with_hints(secret_word):
                     print('You have', warnings_remaining, 'warnings left:', end=' ')
                 print(''.join(get_guessed_word(secret_word, letters_guessed)))
 
-        if guess.isalpha() == True:
+        if guess.isalpha():
             
             if guess not in letters_guessed:
                 letters_guessed.append(guess)
@@ -284,7 +284,7 @@ def hangman_with_hints(secret_word):
                     print('You have', warnings_remaining, 'warnings left:', end=' ')
                 print(''.join(get_guessed_word(secret_word, letters_guessed)))
 
-        if is_word_guessed(secret_word, letters_guessed) == True:
+        if is_word_guessed(secret_word, letters_guessed):
             print('-'*10)
             print('Congratulations! You win!') 
             print('Your total score for this game is:', guesses_remaining*len(set(secret_word)))
