@@ -263,7 +263,7 @@ def play_hand(hand, word_list):
             print('-'*50)
             break
         # If the word is valid:
-        elif is_valid_word(word, hand, word_list) == True:
+        elif is_valid_word(word, hand, word_list):
             # Tell the user how many points the word earned, and the updated total score
             score = get_word_score(word, n)
             total += score
