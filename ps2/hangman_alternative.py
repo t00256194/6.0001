@@ -30,12 +30,12 @@ while i <= num_guess:
     print('Available letters:', ''.join(dict))
     guess = str.lower(input('Please guess a letter: '))
 
-    if guess.isalpha() == False:
+    if not guess.isalpha():
         warnings -= 1
         print('Oops! That is not a valid letter.', end=' ')
         conditions(warnings)
 
-    if guess.isalpha() == True:
+    if guess.isalpha():
 
         ###New Guess###
         if guess not in used:
