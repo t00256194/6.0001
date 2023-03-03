@@ -251,17 +251,21 @@ def play_hand(hand, word_list):
     """
     n = calculate_handlen(hand)    
     total = 0
+
     while n > 0:
         # Display the hand
         print('Current Hand: ', end = '')
         display_hand(hand)
+	
         # Ask user for input
         word = input('Please enter word or \"!!" to indicate that you are finished: ')       
+	
         # If the input is two exclamation points:
         if word == '!!':
             print('Total score for this hand:', total)
             print('-'*50)
             break
+	
         # If the word is valid:
         elif is_valid_word(word, hand, word_list):
             # Tell the user how many points the word earned, and the updated total score
@@ -270,6 +274,7 @@ def play_hand(hand, word_list):
             print('\"', word,'\" ', sep = '', end = '') 
             print('earned', score, 'points. ', end = '')
             print('Total:', total)
+		
         # Otherwise (the word is not valid):
         else:
             # Reject invalid word (print a message)
@@ -278,6 +283,7 @@ def play_hand(hand, word_list):
         hand = update_hand(hand, word)
         n = calculate_handlen(hand)
         print(''*50)
+	
     # Game is over (user entered '!!' or ran out of letters), so tell user the total score
     if n <= 0:
         print('Ran out of Letters. ')
@@ -354,21 +360,36 @@ def play_game(word_list):
     num_hands = int(input('Enter total numer of hands: '))
     overall_score = 0
     replay_ans = 'no'
+	
     for i in range(num_hands):
+	
         # multiple hands case
         if i > 0:
-            replay_ans = input('Would you like to replay the hand? ')           
-        if replay_ans.lower() == 'no':
+            replay_ans = input('Would you like to replay the hand? ')
+            print(''*50)           
+        if replay_ans.lower() in ['no', 'n']:
             hand = deal_hand(HAND_SIZE)
         print('Current hand: ', end = '')
         display_hand(hand)
+	
         # substitute letter option
-        sub_ans = input('Would you like to substitute a letter? ')
-        if sub_ans.lower() in ['yes', 'y']:  
-            letter_to_sub = input('Which letter would you like to replace? ')
-            hand = substitute_hand(hand, letter_to_sub)
-        print(''*50)           
+        sub_ans = ''
+        while sub_ans.lower() not in ['yes', 'y', 'no', 'n']:  
+            sub_ans = input('Would you like to substitute a letter? ')
+            if sub_ans.lower() not in ['yes', 'y', 'no', 'n']:
+                print(''*50)           
+                print('I\'m sorry. I don\'t understand your answer.')
+                print("Please enter 'yes' or 'no'.")
+            if sub_ans.lower() in ['yes', 'y']:
+                letter_to_sub = input('Which letter would you like to replace? ')
+                while letter_to_sub not in hand:
+                    print(''*50)           
+                    print('Sorry, that is not in the hand.')
+                    letter_to_sub = input('Please enter a letter that is in the hand to replace. ')
+                hand = substitute_hand(hand, letter_to_sub
+        
         # total score for all hands
+	print(''*50)   
         overall_score += play_hand(hand, word_list)
     print()
     print('Total score over all hands:', overall_score)
