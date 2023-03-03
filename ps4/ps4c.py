@@ -1,6 +1,13 @@
+import time
 import string
 from ps4a import get_permutations
 
+def timing_with_time():
+    start = time.perf_counter()
+    time.sleep(1)
+    end = time.perf_counter()
+    print(end - start)
+    
 ### HELPER CODE ###
 def load_words(file_name):
     '''
@@ -220,3 +227,5 @@ if __name__ == '__main__':
     print(''*50)
      
     #TODO: WRITE YOUR TEST CASES HERE
+    
+timing_with_time()    
