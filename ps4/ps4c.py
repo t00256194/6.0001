@@ -113,6 +113,25 @@ class SubMessage(object):
                 dictionary[VOWELS_LOWER[i]] = char.lower()
         return dictionary
     
+##    # Method 2 - Dictionary Size = 52, Both Cases Updated
+##    def build_transpose_dict(self, vowels_permutation):
+##    dictionary = {char: char for char in string.ascii_letters}
+##    for i, char in enumerate(vowels_permutation):
+##        dictionary[VOWELS_UPPER[i]] = char.upper()
+##        dictionary[VOWELS_LOWER[i]] = char.lower()
+##    return dictionary
+
+##    # Method 3 - Dictionary Size = len(vowels_permutation)
+##    def build_transpose_dict(self, vowels_permutation):
+##        dictionary = {}
+##        for i, char in enumerate(vowels_permutation):
+##            if char.isupper():
+##                vowels = VOWELS_UPPER
+##            else:
+##                vowels = VOWELS_LOWER
+##            dictionary[char] = VOWELS[i].upper() if char.isupper() else vowels[i].lower()
+##        return dictionary         
+    
     def apply_transpose(self, transpose_dict):
         '''
         transpose_dict (dict): a transpose dictionary
