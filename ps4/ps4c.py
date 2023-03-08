@@ -114,10 +114,10 @@ class SubMessage(object):
         # for character in vowels_permutation ex. idx 0, 'e' 
         for i, char in enumerate(vowels_permutation):
             if char.isupper():
-                dictionary[VOWELS_UPPER[i]] = char.upper()                
+                dictionary[VOWELS_UPPER[i]] = char               
             else:
                 # dictionary[ VOWELS_LOWER[0]=a ] = 'e'
-                dictionary[VOWELS_LOWER[i]] = char.lower()
+                dictionary[VOWELS_LOWER[i]] = char
         return dictionary
     
 ##    # Method 2 - Dictionary Size = 52, Both Cases Updated
