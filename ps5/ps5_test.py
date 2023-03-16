@@ -1,5 +1,3 @@
-# 6.00
-# Problem Set 5 Test Suite
 import unittest
 from ps5_copy import *
 from datetime import timedelta
