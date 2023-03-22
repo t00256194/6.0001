@@ -24,8 +24,7 @@ def load_words():
     line = inFile.readline()
     # wordlist: list of strings
     wordlist = line.split()
-    print("  ", len(wordlist), "words loaded.")
-    print('-'*10)
+    print("  ", len(wordlist), "words loaded.", '\n', '-'*10)
     return wordlist
 
 
@@ -79,8 +78,7 @@ def get_available_letters(letters_guessed):
 def hangman(secret_word):
     print('Welcome to the game Hangman!')
     print('I\'m thinking of a word that is %d letters long.' %len(secret_word))
-    print('You have 3 warnings.')
-    print('-'*10)
+    print('You have 3 warnings.', '\n', '-'*10)
 
     vowel = list('aeiou')
     letters_guessed = []
@@ -138,18 +136,14 @@ def hangman(secret_word):
                 print(''.join(get_guessed_word(secret_word, letters_guessed)))
 
         if is_word_guessed(secret_word, letters_guessed):
-            print('-'*10)
-            print('Congratulations! You win!') 
+            print('-'*10, '\nCongratulations! You win!') 
             print('Your total score for this game is:', guesses_remaining*len(set(secret_word)))
-            print('Thanks for playing...')
-            print('='*50)
+            print('Thanks for playing...', '\n', '='*50)
             break
 
         if guesses_remaining <= 0:
-            print('-'*10)
-            print('Sorry, you ran out of guesses. You lose.')
-            print('The word was:', secret_word)
-            print('='*50)
+            print('-'*10, '\nSorry, you ran out of guesses. You lose.')
+            print('The word was:', secret_word, '\n', '='*50)
             break
         
         print('-'*10)
@@ -225,9 +219,8 @@ def show_possible_matches(my_word):
 def hangman_with_hints(secret_word):
     print('Welcome to the game Hangman!')
     print('I\'m thinking of a word that is %d letters long.' %len(secret_word))
-    print('You have 3 warnings.')
-    print('-'*10)
-
+    print('You have 3 warnings.', '\n', '-'*10)
+ 
     vowel = list('aeiou')
     letters_guessed = []
 
@@ -285,18 +278,14 @@ def hangman_with_hints(secret_word):
                 print(''.join(get_guessed_word(secret_word, letters_guessed)))
 
         if is_word_guessed(secret_word, letters_guessed):
-            print('-'*10)
-            print('Congratulations! You win!') 
+            print('-'*10, '\nCongratulations! You win!') 
             print('Your total score for this game is:', guesses_remaining*len(set(secret_word)))
-            print('Thanks for playing...')
-            print('='*50)
+            print('Thanks for playing...', '\n', '='*50)
             break
 
         if guesses_remaining <= 0:
-            print('-'*10)
-            print('Sorry, you ran out of guesses. You lose.')
-            print('The word was:', secret_word)
-            print('='*50)
+            print('-'*10, '\nSorry, you ran out of guesses. You lose.')
+            print('The word was:', secret_word, '\n', '='*50)
             break
         
         print('-'*10)
