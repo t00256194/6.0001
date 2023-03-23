@@ -377,14 +377,12 @@ def play_game(word_list):
         while sub_ans.lower() not in ['yes', 'y', 'no', 'n']:  
             sub_ans = input('Would you like to substitute a letter? ')
             if sub_ans.lower() not in ['yes', 'y', 'no', 'n']:
-                print(''*50)           
-                print('I\'m sorry. I don\'t understand your answer.')
+                print(''*50, '\nI\'m sorry. I don\'t understand your answer.')
                 print("Please enter 'yes' or 'no'.")
             if sub_ans.lower() in ['yes', 'y']:
                 letter_to_sub = input('Which letter would you like to replace? ')
                 while letter_to_sub not in hand:
-                    print(''*50)           
-                    print('Sorry, that is not in the hand.')
+                    print(''*50, '\nSorry, that is not in the hand.')
                     letter_to_sub = input('Please enter a letter that is in the hand to replace. ')
                 hand = substitute_hand(hand, letter_to_sub
         
