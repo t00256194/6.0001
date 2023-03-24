@@ -384,7 +384,7 @@ def play_game(word_list):
                 while letter_to_sub not in hand:
                     print(''*50, '\nSorry, that is not in the hand.')
                     letter_to_sub = input('Please enter a letter that is in the hand to replace. ')
-                hand = substitute_hand(hand, letter_to_sub
+                hand = substitute_hand(hand, letter_to_sub)
         
         # total score for all hands
 	print(''*50)   
